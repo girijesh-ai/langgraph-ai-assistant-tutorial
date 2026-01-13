@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+
+# Databases and checkpoints
+*.db
+*.sqlite
+*.sqlite3
+checkpoints.db
+agent_memory.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
