@@ -2,6 +2,14 @@
 
 In this module, you will add tool calling capabilities to your agent. This is what separates a simple chatbot from an **agentic AI assistant** - the ability to take actions in the world.
 
+## Prerequisites
+
+Before starting this module, you should have completed:
+- ✅ **Module 02**: Understand StateGraph, nodes, edges, and message flow
+- ✅ Basic Python: Functions, decorators, type hints
+
+**Note:** This module shows tools WITHOUT memory. In Module 04, you'll learn how to persist tool-using conversations across sessions.
+
 ## Learning Objectives
 
 By the end of this module, you will:
@@ -267,6 +275,39 @@ for msg in result["messages"]:
 ### Issue: Tool Execution Errors
 - Ensure tool node has all tools that LLM was bound with
 - Check tool is returning strings (not other types)
+
+## When NOT to Use Tools
+
+Tools add complexity and latency. **Skip tools** when:
+
+| Scenario | Better Approach |
+|----------|-----------------|
+| Simple Q&A | Direct LLM response |
+| Information already in prompt | Use context instead |
+| Real-time conversation | Tools add latency |
+| User just wants to chat | Let LLM be conversational |
+
+**Example:** "What's 2+2?" - LLM can answer directly, doesn't need calculator tool.
+
+**Rule of thumb:** If the answer requires external data or computation, use tools. If it's knowledge or reasoning, let LLM handle it.
+
+## Bridging to Module 04
+
+**What you've built:** An agent that uses tools to take actions.
+
+**The problem:** Your agent forgets everything after each `invoke()`. Try this:
+
+```python
+# Turn 1
+agent.invoke({"messages": [HumanMessage("Calculate 50 * 3")]})
+# Agent: The result is 150
+
+# Turn 2  
+agent.invoke({"messages": [HumanMessage("What was my last calculation?")]})
+# Agent: I don't have information about your previous calculations
+```
+
+**The agent forgot!** In Module 04, you'll add memory so agents remember conversations across invocations - just like ChatGPT does.
 
 ## Exercises
 

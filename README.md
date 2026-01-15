@@ -144,6 +144,13 @@ python code/03_tools.py
 python code/07_complete_agent.py
 ```
 
+## Helpful Resources
+
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Solutions to common issues for each module
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Detailed system architecture diagrams  
+- **[VIDEO_SCRIPT.md](VIDEO_SCRIPT.md)** - Video walkthrough script
+- **[Official LangGraph Docs](https://langchain-ai.github.io/langgraph/)** - Reference documentation
+
 ## Author
 
 Senior Staff AI Engineer Tutorial Series

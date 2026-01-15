@@ -30,3 +30,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Generated PDFs (can be recreated with create_pdf.py)
+*.pdf
+
+# Temporary files
+*.tmp
